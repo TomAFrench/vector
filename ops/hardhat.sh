@@ -32,6 +32,7 @@ docker run \
   --detach \
   --entrypoint=hardhat \
   --env="API_KEY=${API_KEY}" \
+  --env="ETHERSCAN_API_KEY=${ETHERSCAN_API_KEY}" \
   --env="ETH_PROVIDER_URL=$ETH_PROVIDER_URL" \
   --env="MNEMONIC=${MNEMONIC}" \
   --interactive \

@@ -2,7 +2,7 @@ import "@nomiclabs/hardhat-waffle";
 import "hardhat-deploy";
 import "hardhat-deploy-ethers";
 import "hardhat-typechain";
-import { HardhatUserConfig } from "hardhat/types";
+import "@nomiclabs/hardhat-etherscan";
 
 import * as packageJson from "./package.json";
 import "./src.ts/tasks";
@@ -15,7 +15,7 @@ const mnemonic =
   process.env.MNEMONIC ||
   "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";
 
-const config: HardhatUserConfig = {
+const config = {
   paths: {
     artifacts: "./artifacts",
     deploy: "./deploy",
@@ -94,6 +94,9 @@ const config: HardhatUserConfig = {
       chainId: 152709604825713,
       url: urlOverride || "https://kovan2.arbitrum.io/rpc",
     },
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };
 
